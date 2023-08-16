@@ -17,3 +17,8 @@
 input[type='number'] {
   width: 80px;
 } 
+
+img {
+  height: 300px; 
+  width: 300px;
+}
