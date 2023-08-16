@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag "/stylesheets.css" %>
+
+<h1 class="center">All Products</h1>
+<div class="items">
+<% @products.each do |product| %>
+  <% if product.category == "grain" %>
+    <% tag = "/lb" %>
+  <% elsif product.category == "hop" %>
+    <% tag = "/oz" %>
+  <% elsif product.category == "yeast" %>
+    <% tag = "/pack" %>
+  <% end %>
+  <h2><%= product.name %></h2>
+  <img src="<%= product.image_url %>">
+  <p>Price: $<%= product.price %><%= tag %></p>
+  <div class="purchase">
+  <input type="number">
+  <button>Buy</button>
+  </div>
+<% end %>
+<div>
